@@ -1,13 +1,5 @@
-import os
 import datetime
-
-from os.path import abspath
-import pathlib
-from pathlib import Path
-from PIL.ImageChops import screen
 from selenium.webdriver import ActionChains
-
-
 class Base():
     def __init__(self, driver):
         self.driver = driver

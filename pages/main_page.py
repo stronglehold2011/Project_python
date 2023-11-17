@@ -9,9 +9,6 @@ from utilities.logger import Logger
 """Main page and product category selection"""
 class Main_page(Base):
 
-    # def __init__(self, driver):
-    #     super().__init__(driver)
-    #     self.driver = driver
 
     # Locators
 

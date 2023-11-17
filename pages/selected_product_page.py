@@ -10,11 +10,6 @@ from utilities.logger import Logger
 
 class Selected_product(Base):
 
-    # def __init__(self, driver):
-    #     super().__init__(driver)
-    #
-    #     self.driver = driver
-
     # Locators
     size = "/html/body/div[2]/main/div[4]/section/section/aside/div[2]/section/div[2]/button[2]/div/div"
     button_add = ("#__next > main > div:nth-child(4) > section > section > aside > "

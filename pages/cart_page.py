@@ -15,10 +15,6 @@ from utilities.logger import Logger
 
 class Cart_page(Base):  # теперь класс Cart_page классом потомком класса Base
 
-    # def __init__(self, driver):  # Передаем driver, чтобы отсюда мы могли запускать шаги авторизации
-    #     super().__init__(driver)  # super указывает, что это потомок
-    #     self.driver = driver
-
     # Locators
 
     button_place_an_order = "//button[@class='Button__Component-sc-1qrls71-1 Button__Main-sc-1qrls71-2 dtDlMV kUMWms']"

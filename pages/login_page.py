@@ -10,9 +10,6 @@ class Login_page(Base):  # теперь класс Login_page стал клас�
 
     url = 'https://befree.ru/muzhskaya'
 
-    # def __init__(self, driver):  # Передаем driver, чтобы отсюда мы могли запускать шаги авторизации
-    #     super().__init__(driver)  # super указывает, что это потомок
-    #     self.driver = driver
 
     # Locators
 

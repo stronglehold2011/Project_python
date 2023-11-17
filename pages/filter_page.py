@@ -12,10 +12,6 @@ from utilities.logger import Logger
 
 class Filter_page(Base):
 
-    # def __init__(self, driver):
-    #     super().__init__(driver)
-    #
-    #     self.driver = driver
 
     # Locators
     main_sweaters_word = "//*[@id='__next']/main/section/section[1]/div[1]/div/h1"
