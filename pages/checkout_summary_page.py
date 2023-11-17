@@ -1,17 +1,19 @@
+import allure
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 import time
 from base.base_class import Base
+from utilities.logger import Logger
 
 """Checkout summary page"""
 
 
 class Checkout_summary(Base):
 
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
+    # def __init__(self, driver):
+    #     super().__init__(driver)
+    #     self.driver = driver
 
     # Locators
 
@@ -36,11 +38,14 @@ class Checkout_summary(Base):
 
     # Methods
     def finish(self):
-        self.get_current_url()
-        self.assert_url("https://befree.ru/checkout/summary")
-        self.get_screenshot()
-        time.sleep(3)
-        self.click_button_payment_method()
-        self.click_button_checkout()
-        time.sleep(3)
-        self.get_screenshot()
+        with allure.step("Finish"):
+            Logger.add_start_step(method="finish")
+            self.get_current_url()
+            self.assert_url("https://befree.ru/checkout/summary")
+            self.get_screenshot()
+            time.sleep(3)
+            self.click_button_payment_method()
+            self.click_button_checkout()
+            time.sleep(3)
+            self.get_screenshot()
+            Logger.add_end_step(url=self.driver.current_url, method="finish")

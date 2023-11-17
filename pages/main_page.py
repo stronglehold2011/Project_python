@@ -1,15 +1,17 @@
+import allure
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
+from utilities.logger import Logger
 
 """Main page and product category selection"""
 class Main_page(Base):
 
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
+    # def __init__(self, driver):
+    #     super().__init__(driver)
+    #     self.driver = driver
 
     # Locators
 
@@ -54,11 +56,13 @@ class Main_page(Base):
 
     # Methods
     def select_categories_1(self):
-        self.get_current_url()
-        self.assert_url("https://befree.ru/muzhskaya")
-        self.click_select_mens_button()
-        self.click_select_category_cloth()
-        self.click_select_sweaters_and_jumpers()
-        self.click_select_sweaters()
-        self.get_current_url()
-
+        with allure.step("Select categories 1"):
+            Logger.add_start_step(method="select_categories_1")
+            self.get_current_url()
+            self.assert_url("https://befree.ru/muzhskaya")
+            self.click_select_mens_button()
+            self.click_select_category_cloth()
+            self.click_select_sweaters_and_jumpers()
+            self.click_select_sweaters()
+            self.get_current_url()
+            Logger.add_end_step(url=self.driver.current_url, method="select_categories_1")

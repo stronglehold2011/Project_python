@@ -1,7 +1,9 @@
+import allure
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
+from utilities.logger import Logger
 
 """Filtered Products Page"""
 # Globals
@@ -10,10 +12,10 @@ price_sweater_text = ''
 
 class Filter_sweaters_page(Base):
 
-    def __init__(self, driver):
-        super().__init__(driver)
-
-        self.driver = driver
+    # def __init__(self, driver):
+    #     super().__init__(driver)
+    #
+    #     self.driver = driver
 
     # Locators
     main_sweaters_word = "//*[@id='__next']/main/section/section[1]/div[1]/div/h1"
@@ -48,11 +50,14 @@ class Filter_sweaters_page(Base):
 
     # Methods
     def select_sweaters(self):
-        self.get_current_url()
-        self.assert_url("https://befree.ru/muzhskaya/svitery-muzskie?filters=%7B%22prices%22%3A%7B%22min_value%22"
-                        "%3A2999%2C%22max_value%22%3A3000%7D%2C%22colors%22%3A%7B%22value_ids%22%3A%5B10%5D%7D%2C"
-                        "%22sizes%22%3A%7B%22value_ids%22%3A%5B3%5D%7D%7D")
-        self.assert_word(self.get_main_sweaters_word(), "свитеры")
-        self.driver.execute_script(f'window.scrollBy({0},{300})')
-        self.click_select_sweater()
-        self.price_sweater_text_1()
+        with allure.step("Select sweaters"):
+            Logger.add_start_step(method="select_sweaters")
+            self.get_current_url()
+            self.assert_url("https://befree.ru/muzhskaya/svitery-muzskie?filters=%7B%22prices%22%3A%7B%22min_value%22"
+                            "%3A2999%2C%22max_value%22%3A3000%7D%2C%22colors%22%3A%7B%22value_ids%22%3A%5B10%5D%7D%2C"
+                            "%22sizes%22%3A%7B%22value_ids%22%3A%5B3%5D%7D%7D")
+            self.assert_word(self.get_main_sweaters_word(), "свитеры")
+            self.driver.execute_script(f'window.scrollBy({0},{300})')
+            self.click_select_sweater()
+            self.price_sweater_text_1()
+            Logger.add_end_step(url=self.driver.current_url, method="select_sweaters")

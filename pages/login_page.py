@@ -1,16 +1,18 @@
+import allure
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
+from utilities.logger import Logger
 
 """Authorization page"""
 class Login_page(Base):  # теперь класс Login_page стал классом потомком класса Base
 
     url = 'https://befree.ru/muzhskaya'
 
-    def __init__(self, driver):  # Передаем driver, чтобы отсюда мы могли запускать шаги авторизации
-        super().__init__(driver)  # super указывает, что это потомок
-        self.driver = driver
+    # def __init__(self, driver):  # Передаем driver, чтобы отсюда мы могли запускать шаги авторизации
+    #     super().__init__(driver)  # super указывает, что это потомок
+    #     self.driver = driver
 
     # Locators
 
@@ -53,11 +55,13 @@ class Login_page(Base):  # теперь класс Login_page стал клас�
 
     # Methods
     def authorization(self):
-        self.driver.get(self.url)
-        self.driver.maximize_window()
-        self.get_current_url()
-        self.click_entrance()
-        self.input_user_name("testovarov@mail.ru")
-        self.input_password("Iyri)OuIlI12")
-        self.click_sign_in_button()
-
+        with allure.step("Authorization"):
+            Logger.add_start_step(method="authorization")
+            self.driver.get(self.url)
+            self.driver.maximize_window()
+            self.get_current_url()
+            self.click_entrance()
+            self.input_user_name("testovarov@mail.ru")
+            self.input_password("Iyri)OuIlI12")
+            self.click_sign_in_button()
+            Logger.add_end_step(url=self.driver.current_url, method="authorization")

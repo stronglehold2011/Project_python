@@ -1,5 +1,6 @@
 import time
 
+import allure
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -7,13 +8,16 @@ from selenium.webdriver.support import expected_conditions as EC
 from pages import filtered_sweaters_page
 
 from base.base_class import Base
+from utilities.logger import Logger
 
 """Cart page"""
+
+
 class Cart_page(Base):  # теперь класс Cart_page классом потомком класса Base
 
-    def __init__(self, driver):  # Передаем driver, чтобы отсюда мы могли запускать шаги авторизации
-        super().__init__(driver)  # super указывает, что это потомок
-        self.driver = driver
+    # def __init__(self, driver):  # Передаем driver, чтобы отсюда мы могли запускать шаги авторизации
+    #     super().__init__(driver)  # super указывает, что это потомок
+    #     self.driver = driver
 
     # Locators
 
@@ -40,8 +44,11 @@ class Cart_page(Base):  # теперь класс Cart_page классом по�
 
     # Methods
     def placing_an_order(self):
-        self.get_current_url()
-        self.assert_url("https://befree.ru/cart")
-        self.assert_price(filtered_sweaters_page.price_sweater_text, self.price_cart_text())
-        time.sleep(3)
-        self.click_button_place_an_order()
+        with allure.step("Placing an order"):
+            Logger.add_start_step(method="placing_an_order")
+            self.get_current_url()
+            self.assert_url("https://befree.ru/cart")
+            self.assert_price(filtered_sweaters_page.price_sweater_text, self.price_cart_text())
+            time.sleep(3)
+            self.click_button_place_an_order()
+            Logger.add_end_step(url=self.driver.current_url, method="placing_an_order")

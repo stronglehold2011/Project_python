@@ -1,5 +1,10 @@
-from datetime import datetime
+import os
+import datetime
 
+from os.path import abspath
+import pathlib
+from pathlib import Path
+from PIL.ImageChops import screen
 from selenium.webdriver import ActionChains
 
 
@@ -20,19 +25,15 @@ class Base():
         assert value_word == result
         print("Good value word")
 
+
     """Method Screenshot"""
 
     def get_screenshot(self):
-        now_date = datetime.utcnow().strftime("%Y.%m.%d.%H.%M.%S")  # в скобках год.месяц.день.час.минута.секунда.
+        now_time = datetime.datetime.utcnow().strftime("%Y.%m.%d-%H.%M.%S")
+        self.driver.save_screenshot(f"../screen/screenshot{now_time}.png")
 
-        """Создадим переменную и сохраним в нее название нашего нового файла:"""
-        name_screenshot = 'screenshot' + now_date + '.png'
+        """Method assert url"""
 
-        """Обращаемся к переменной driver и пишем save_screenshot и путь дериктории в которую сохраняем"""
-        self.driver.save_screenshot(
-            'C:\\Users\\Рома\\PycharmProjects\\pythonProject1\\main_project_1\\screen\\' + name_screenshot)
-
-    """Method assert url"""
 
     def assert_url(self, result: object) -> object:
         get_url = self.driver.current_url
@@ -51,6 +52,7 @@ class Base():
         return ActionChains(self.driver).move_to_element(locator).perform()
 
     """Method price comparison """
+
     def assert_price(self, price1, price2):
         assert price1 == price2
         print("The price of the product matches")

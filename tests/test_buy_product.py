@@ -11,8 +11,10 @@ from pages.filtered_sweaters_page import Filter_sweaters_page
 from pages.login_page import Login_page
 from pages.main_page import Main_page
 from pages.selected_product_page import Selected_product
+import allure
 
 
+@allure.description("Test buy product 1")
 def test_buy_product_1(set_up, set_group):
     options = webdriver.ChromeOptions()
     options.add_experimental_option("detach", True)

@@ -1,15 +1,19 @@
+import allure
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
+from utilities.logger import Logger
 
 """Page of the selected product"""
+
+
 class Selected_product(Base):
 
-    def __init__(self, driver):
-        super().__init__(driver)
-
-        self.driver = driver
+    # def __init__(self, driver):
+    #     super().__init__(driver)
+    #
+    #     self.driver = driver
 
     # Locators
     size = "/html/body/div[2]/main/div[4]/section/section/aside/div[2]/section/div[2]/button[2]/div/div"
@@ -47,7 +51,10 @@ class Selected_product(Base):
 
     # Methods
     def add_product(self):
-        self.get_current_url()
-        self.click_select_size()
-        self.click_button_add()
-        self.click_button_go_to_cart()
+        with allure.step("Add product"):
+            Logger.add_start_step(method="add_product")
+            self.get_current_url()
+            self.click_select_size()
+            self.click_button_add()
+            self.click_button_go_to_cart()
+            Logger.add_end_step(url=self.driver.current_url, method="add_product")

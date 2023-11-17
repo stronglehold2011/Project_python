@@ -1,15 +1,19 @@
+import allure
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
 from base.base_class import Base
+from utilities.logger import Logger
 
 """Delivery address page"""
+
+
 class Delivery_address_page(Base):
 
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
+    # def __init__(self, driver):
+    #     super().__init__(driver)
+    #     self.driver = driver
 
     # Locators
 
@@ -44,8 +48,11 @@ class Delivery_address_page(Base):
 
     # Methods
     def delivery_address(self):
-        self.get_current_url()
-        self.assert_url("https://befree.ru/checkout/delivery")
-        self.input_name_street("Lamoda | СПб | м. Удельная |Удельный пр-т 27")
-        self.click_button_address()
-        self.click_button_bring_here()
+        with allure.step("Delivery address"):
+            Logger.add_start_step(method="delivery_address")
+            self.get_current_url()
+            self.assert_url("https://befree.ru/checkout/delivery")
+            self.input_name_street("Lamoda | СПб | м. Удельная |Удельный пр-т 27")
+            self.click_button_address()
+            self.click_button_bring_here()
+            Logger.add_end_step(url=self.driver.current_url, method="delivery_address")
