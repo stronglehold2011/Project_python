@@ -1,0 +1,55 @@
+Enter system
+Start test
+Start Test 1
+Current url https://befree.ru/muzhskaya
+click entrance
+Input user name
+Input password
+Authorization passed 
+Current url https://befree.ru/muzhskaya
+Good value url
+Click select mens button
+Click select category cloth
+Click select sweaters and jumpers
+Click select sweaters
+Current url https://befree.ru/muzhskaya/svitery-muzskie
+Current url https://befree.ru/muzhskaya/svitery-muzskie
+Good value url
+Good value word
+click OK cookie
+click select  filter
+price BACKSPACE
+Input price up to
+click select filter color
+click select color beige
+click select filter color
+click select filter size
+click select size
+click select filter size
+click button show
+Current url https://befree.ru/muzhskaya/svitery-muzskie?filters=%7B%22prices%22%3A%7B%22min_value%22%3A2999%2C%22max_value%22%3A3000%7D%2C%22colors%22%3A%7B%22value_ids%22%3A%5B10%5D%7D%2C%22sizes%22%3A%7B%22value_ids%22%3A%5B3%5D%7D%7D
+Good value url
+Good value word
+click cotton sweater with pigtail pattern
+Current url https://befree.ru/muzhskaya/product/2339854804/61
+size selected
+button add pressed
+button go to cart
+Current url https://befree.ru/cart
+Good value url
+The price of the product matches
+click button place an order
+Current url https://befree.ru/cart
+Good value url
+Good value word
+click button method delivery pick-up point
+Current url https://befree.ru/checkout/delivery
+Good value url
+Input address
+click button enter address
+click button bring here
+Current url https://befree.ru/checkout/summary
+Good value url
+Finish Test
+Finish test
+Exit system
