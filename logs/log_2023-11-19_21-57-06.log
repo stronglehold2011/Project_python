@@ -1,10 +1,10 @@
 
 -----
 Test: tests/test_buy_product.py::test_buy_product_1 (call)
-Start time: 2023-11-18 14:03:57.626435
+Start time: 2023-11-19 21:57:10.315736
 Start name method: authorization
 
-End time: 2023-11-18 14:04:13.354435
+End time: 2023-11-19 21:57:22.353735
 End name method: authorization
 URL: https://befree.ru/muzhskaya
 
@@ -12,10 +12,10 @@ URL: https://befree.ru/muzhskaya
 
 -----
 Test: tests/test_buy_product.py::test_buy_product_1 (call)
-Start time: 2023-11-18 14:04:13.355436
+Start time: 2023-11-19 21:57:22.354735
 Start name method: select_categories_1
 
-End time: 2023-11-18 14:04:23.513437
+End time: 2023-11-19 21:57:37.476737
 End name method: select_categories_1
 URL: https://befree.ru/muzhskaya/svitery-muzskie
 
@@ -23,10 +23,10 @@ URL: https://befree.ru/muzhskaya/svitery-muzskie
 
 -----
 Test: tests/test_buy_product.py::test_buy_product_1 (call)
-Start time: 2023-11-18 14:04:23.514437
+Start time: 2023-11-19 21:57:37.478737
 Start name method: product_filtering
 
-End time: 2023-11-18 14:04:33.529437
+End time: 2023-11-19 21:57:48.749737
 End name method: product_filtering
 URL: https://befree.ru/muzhskaya/svitery-muzskie?filters=%7B%22prices%22%3A%7B%22min_value%22%3A2999%2C%22max_value%22%3A3000%7D%2C%22colors%22%3A%7B%22value_ids%22%3A%5B10%5D%7D%2C%22sizes%22%3A%7B%22value_ids%22%3A%5B3%5D%7D%7D
 
@@ -34,10 +34,10 @@ URL: https://befree.ru/muzhskaya/svitery-muzskie?filters=%7B%22prices%22%3A%7B%2
 
 -----
 Test: tests/test_buy_product.py::test_buy_product_1 (call)
-Start time: 2023-11-18 14:04:33.530439
+Start time: 2023-11-19 21:57:48.750739
 Start name method: select_sweaters
 
-End time: 2023-11-18 14:04:34.497435
+End time: 2023-11-19 21:57:49.524736
 End name method: select_sweaters
 URL: https://befree.ru/muzhskaya/svitery-muzskie?filters=%7B%22prices%22%3A%7B%22min_value%22%3A2999%2C%22max_value%22%3A3000%7D%2C%22colors%22%3A%7B%22value_ids%22%3A%5B10%5D%7D%2C%22sizes%22%3A%7B%22value_ids%22%3A%5B3%5D%7D%7D
 
@@ -45,10 +45,10 @@ URL: https://befree.ru/muzhskaya/svitery-muzskie?filters=%7B%22prices%22%3A%7B%2
 
 -----
 Test: tests/test_buy_product.py::test_buy_product_1 (call)
-Start time: 2023-11-18 14:04:34.498434
+Start time: 2023-11-19 21:57:49.525735
 Start name method: add_product
 
-End time: 2023-11-18 14:04:41.441439
+End time: 2023-11-19 21:57:55.860735
 End name method: add_product
 URL: https://befree.ru/cart
 
@@ -56,10 +56,10 @@ URL: https://befree.ru/cart
 
 -----
 Test: tests/test_buy_product.py::test_buy_product_1 (call)
-Start time: 2023-11-18 14:04:41.443436
+Start time: 2023-11-19 21:57:55.862736
 Start name method: placing_an_order
 
-End time: 2023-11-18 14:04:45.316438
+End time: 2023-11-19 21:58:01.057734
 End name method: placing_an_order
 URL: https://befree.ru/cart
 
@@ -67,10 +67,10 @@ URL: https://befree.ru/cart
 
 -----
 Test: tests/test_buy_product.py::test_buy_product_1 (call)
-Start time: 2023-11-18 14:04:45.317437
+Start time: 2023-11-19 21:58:01.061738
 Start name method: delivery
 
-End time: 2023-11-18 14:04:46.777435
+End time: 2023-11-19 21:58:02.644733
 End name method: delivery
 URL: https://befree.ru/cart
 
@@ -78,10 +78,10 @@ URL: https://befree.ru/cart
 
 -----
 Test: tests/test_buy_product.py::test_buy_product_1 (call)
-Start time: 2023-11-18 14:04:49.779431
+Start time: 2023-11-19 21:58:05.647736
 Start name method: delivery_address
 
-End time: 2023-11-18 14:04:55.456436
+End time: 2023-11-19 21:58:12.462736
 End name method: delivery_address
 URL: https://befree.ru/checkout/summary
 
@@ -89,10 +89,10 @@ URL: https://befree.ru/checkout/summary
 
 -----
 Test: tests/test_buy_product.py::test_buy_product_1 (call)
-Start time: 2023-11-18 14:04:55.457436
+Start time: 2023-11-19 21:58:12.463738
 Start name method: finish
 
-End time: 2023-11-18 14:05:02.527436
+End time: 2023-11-19 21:58:19.653735
 End name method: finish
 URL: https://befree.ru/checkout/summary
 
